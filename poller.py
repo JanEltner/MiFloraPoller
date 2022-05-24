@@ -52,7 +52,5 @@ if __name__ == "__main__":
     
     filename = os.path.join(root, 'html', 'index.html')
     with open(filename, 'w') as fh:
-    fh.write(template.render(
-        plantsensors = sensory_data_array,
-    ))
+        fh.write(template.render(plantsensors = sensory_data_array))
     
