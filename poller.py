@@ -34,7 +34,8 @@ if __name__ == "__main__":
         for sensor in sensors:
             bt_mac = sensor.get('bluetooth_mac_address')
             sensor_name = sensor.get('name')
-            print("Trying to connect to " + str(sensor_name) + " with MAC " +str(bt_mac))
+            plant = sensor.get('plant')
+            print("Trying to connect to " + str(sensor_name) + " with MAC " +str(bt_mac) + " on plant " + plant)
             poller = MiFloraPoller(bt_mac, BluepyBackend)
             miflora_data_dict = get_miflora_data_dict(poller)
             if not 'data' in miflora_data_dict:
