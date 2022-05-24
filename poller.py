@@ -30,7 +30,9 @@ if __name__ == "__main__":
     configuration = load_config("{}/{}".format("/home/pi", "floral-config.yaml"))
 
     sensors = configuration.get("sensors")
-    bt_mac = sensors[1].get('bluetooth_mac_address')
-    poller = MiFloraPoller(bt_mac, BluepyBackend)
-    miflora_data_dict = get_miflora_data_dict(poller)
-    print(miflora_data_dict['moisture'])
+    for sensor in sensors:
+        bt_mac = sensor.get('bluetooth_mac_address')
+        sensor_name = sensor.get('name')
+        poller = MiFloraPoller(bt_mac, BluepyBackend)
+        miflora_data_dict = get_miflora_data_dict(poller)
+        print(str(sensor_name) + " meldet eine Feuchtigkeit von " + str(miflora_data_dict['moisture']) +"%")
