@@ -10,7 +10,7 @@ def load_config(file):
 
 
 
-configuration = load_yaml("{}/{}".format("/home/pi", "floral-config.yaml"))
+configuration = load_config("{}/{}".format("/home/pi", "floral-config.yaml"))
 php_param = sys.argv[1]
 poller = MiFloraPoller(php_param, BluepyBackend)
 
