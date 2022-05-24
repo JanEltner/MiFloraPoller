@@ -49,7 +49,7 @@ if __name__ == "__main__":
             sensory_data_array.append(miflora_data_dict)
             print(str(sensor_name) + " meldet eine Feuchtigkeit von " + str(miflora_data_dict['moisture']) +u"% sowie einen Nährstoffgehalt von " + str(miflora_data_dict['conductivity']) + "uS/cm")
     
-    filename = os.path.join('var', 'www', 'html', 'dashboard', 'index.html')
+    filename = os.path.join('/var', 'www', 'html', 'dashboard', 'index.html')
     with open(filename, 'w') as fh:
         fh.write(template.render(plantsensors = sensory_data_array))
     
