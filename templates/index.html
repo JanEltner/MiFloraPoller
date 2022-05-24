@@ -1,0 +1,16 @@
+<h1>Floral Dashboard</h1>
+     
+
+ 
+<ul>
+{% for sensor in plantsensors %}
+  <div>
+    <h2>{{ sensor.plant }}</h2>
+    <div>Feuchtigkeit {{ sensor.moisture }}</div>
+    <div>Fruchtbarkeit {{ sensor.conductivity }}</div>
+    <div>Temperatur {{ sensor.temperature }}</div>
+    <div>Helligkeit {{ sensor.light }}</div>
+    <div>Baterie {{ sensor.battery }}</div>
+  </div>
+{% endfor %}
+</ul>
