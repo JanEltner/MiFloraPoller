@@ -11,7 +11,6 @@ def load_config_from_file(file):
         return yaml.safe_load(f)
 
 
-# Function read
 def get_miflora_data_dict(poller):
     datadict = dict()
     try:
