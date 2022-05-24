@@ -37,4 +37,4 @@ if __name__ == "__main__":
         poller = MiFloraPoller(bt_mac, BluepyBackend)
         miflora_data_dict = get_miflora_data_dict(poller)
         if not 'data' in miflora_data_dict:
-            print(str(sensor_name) + " meldet eine Feuchtigkeit von " + str(miflora_data_dict['moisture']) +"%")
+            print(str(sensor_name) + " meldet eine Feuchtigkeit von " + str(miflora_data_dict['moisture']) +"% sowie einen Nährstoffgehalt von " + str(miflora_data_dict['conductivity']) + "uS/cm")
