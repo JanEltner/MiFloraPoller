@@ -34,7 +34,7 @@ if __name__ == "__main__":
         bt_mac = sensor.get('bluetooth_mac_address')
         sensor_name = sensor.get('name')
         print("Trying to connect to " + str(sensor_name) + " with MAC " +str(bt_mac))
-        poller = MiFloraPoller(bt_mac, BluepyBackend)
+        poller = MiFloraPoller(bt_mac, BluepyBackend, 20)
         miflora_data_dict = get_miflora_data_dict(poller)
         if not 'data' in miflora_data_dict:
             print(str(sensor_name) + " meldet eine Feuchtigkeit von " + str(miflora_data_dict['moisture']) +"% sowie einen Nährstoffgehalt von " + str(miflora_data_dict['conductivity']) + "uS/cm")
