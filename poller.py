@@ -5,8 +5,8 @@ import os, yaml
 import sys
 
 def load_config(file):
-    with open(file) as f:
-        return yaml.load(f)
+    with open(file, 'r') as f:
+        return yaml.safe_load(f)
 
 
 
