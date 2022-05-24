@@ -11,7 +11,8 @@ def load_config(file):
 
 
 configuration = load_config("{}/{}".format("/home/pi", "floral-config.yaml"))
-php_param = sys.argv[1]
+sensors = configuration.get("sensors")
+php_param = sensors[1].get('bluetooth_mac_address')
 poller = MiFloraPoller(php_param, BluepyBackend)
 
 from miflora.miflora_poller import MiFloraPoller, MI_CONDUCTIVITY, MI_MOISTURE, MI_LIGHT, MI_TEMPERATURE, MI_BATTERY
