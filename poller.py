@@ -30,7 +30,7 @@ if __name__ == "__main__":
     configuration = load_config("{}/{}".format("/home/pi", "floral-config.yaml"))
 
     sensors = configuration.get("sensors")
-    for _ in range 4:
+    for _ in range(4):
         for sensor in sensors:
             bt_mac = sensor.get('bluetooth_mac_address')
             sensor_name = sensor.get('name')
